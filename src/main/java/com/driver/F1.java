@@ -21,7 +21,7 @@ public class F1 extends Car {
          */
         if (newSpeed <= 0) {
             // Stop the car, set the speed to 0 and gear to 1
-            stop(); // Assuming stop() sets current speed to 0
+            // stop(); // Assuming stop() sets current speed to 0
             changeGear(1);
             System.out.println("Car has stopped. Gear set to 1.");
         } else {
