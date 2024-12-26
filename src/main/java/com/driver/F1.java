@@ -1,33 +1,30 @@
 package com.driver;
 
 public class F1 extends Car {
-
-    // Constructor to initialize the F1 car
-    public F1(String name, boolean isMoving) {
-        super(name, isMoving);
+    public F1(String name, int doors, int gears, int wheels, boolean isManual, int seats) {
+        super(name, doors, gears, wheels, isManual, seats);
     }
 
-    // Method to accelerate the F1 car (positive or negative acceleration)
-    public void accelerate(int speedIncrease) {
-        if (isMoving) {
-            if (speedIncrease > 0) {
-                System.out.println(name + " accelerated by " + speedIncrease + " km/h.");
-            } else if (speedIncrease < 0) {
-                System.out.println(name + " decelerated by " + (-speedIncrease) + " km/h.");
-            }
-        } else {
-            System.out.println(name + " is not moving, cannot accelerate.");
-        }
-    }
-
-    // Overriding move to provide specific behavior for F1 cars
+    // Overriding the move method for F1-specific movement
     @Override
     public void move(int speed, int direction) {
         if (speed > 0) {
             isMoving = true;
+            currentSpeed = speed;
+            currentDirection = direction;
             System.out.println(name + " is racing at " + speed + " km/h in direction " + direction + " degrees.");
         } else {
             stop();
+        }
+    }
+
+    // Accelerate method specific for F1
+    public void accelerate(int speedIncrease) {
+        if (isMoving) {
+            currentSpeed += speedIncrease;
+            System.out.println(name + " accelerated to " + currentSpeed + " km/h.");
+        } else {
+            System.out.println(name + " is not moving, cannot accelerate.");
         }
     }
 }
