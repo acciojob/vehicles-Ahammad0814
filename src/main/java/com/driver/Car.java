@@ -1,70 +1,89 @@
 package com.driver;
 
 public class Car extends Vehicle {
-    protected int speed;
-    protected int gears;
-    protected int wheels;
-    protected boolean isManual;
-    protected int seats;
-    protected int currentGear;
+    private int wheels;
+    private String type;
+    private int doors;
+    private int gears;
+    private boolean isManual;
+    private int currentGear;
+    private int seats;
 
-    // Constructor with additional car-specific attributes
-    public Car(String name, int speed, int gears, int wheels, boolean isManual, int seats) {
+    public Car(String name, int wheels, int doors, int gears, boolean isManual, String type, int seats) {
+        //Hint: Car extends Vehicle
         super(name);
-        this.speed = speed;
-        this.gears = gears;
         this.wheels = wheels;
+        this.doors = doors;
+        this.gears = gears;
         this.isManual = isManual;
+        this.type = type;
         this.seats = seats;
-        this.currentGear = 0;
+        this.currentGear = 1;
     }
 
-    // Getter methods for car-specific attributes
-    public int getSpeed() {
-        return speed;
+    public void changeGear(int newGear){
+        this.currentGear = newGear;
+        System.out.println("changeGear method called - The gear is changed to: " + currentGear);
     }
 
-    public int getGears() {
-        return gears;
+    public void changeSpeed(int newSpeed, int newDirection){
+        super.move(newSpeed, newDirection);
+        System.out.println("changeSpeed method called - The speed is changed to: " + newSpeed + ", and the direction is changed to: " + newDirection + " degrees");
     }
 
     public int getWheels() {
         return wheels;
     }
 
-    public boolean isManual() {
-        return isManual;
+    public String getType() {
+        return type;
     }
 
-    public int getSeats() {
-        return seats;
+    public int getDoors() {
+        return doors;
+    }
+
+    public int getGears() {
+        return gears;
+    }
+
+    public boolean isManual() {
+        return isManual;
     }
 
     public int getCurrentGear() {
         return currentGear;
     }
 
-    // Change the car's gear
-    public void changeGear(int gear) {
-        if (gear <= gears && gear >= 0) {
-            currentGear = gear;
-            System.out.println(name + " changed to gear " + gear);
-        }
+    public int getSeats() {
+        return seats;
     }
 
-    // Change the car's speed
-    public void changeSpeed(int speed) {
-        if (speed > 0) {
-            currentSpeed = speed;
-            System.out.println(name + " is moving at " + speed + " km/h.");
-        } else {
-            stop();
-        }
+    public void setWheels(int wheels) {
+        this.wheels = wheels;
     }
 
-    // Method to steer the car
-    public void steer(int direction) {
-        currentDirection = direction;
-        System.out.println(name + " is steering at " + direction + " degrees.");
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setDoors(int doors) {
+        this.doors = doors;
+    }
+
+    public void setGears(int gears) {
+        this.gears = gears;
+    }
+
+    public void setManual(boolean manual) {
+        isManual = manual;
+    }
+
+    public void setCurrentGear(int currentGear) {
+        this.currentGear = currentGear;
+    }
+
+    public void setSeats(int seats) {
+        this.seats = seats;
     }
 }
