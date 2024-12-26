@@ -1,7 +1,7 @@
 package com.driver;
 
 public class Car extends Vehicle {
-    protected int doors;
+    protected int speed;
     protected int gears;
     protected int wheels;
     protected boolean isManual;
@@ -9,9 +9,9 @@ public class Car extends Vehicle {
     protected int currentGear;
 
     // Constructor with additional car-specific attributes
-    public Car(String name, int doors, int gears, int wheels, boolean isManual, int seats) {
+    public Car(String name, int speed, int gears, int wheels, boolean isManual, int seats) {
         super(name);
-        this.doors = doors;
+        this.speed = speed;
         this.gears = gears;
         this.wheels = wheels;
         this.isManual = isManual;
@@ -20,8 +20,8 @@ public class Car extends Vehicle {
     }
 
     // Getter methods for car-specific attributes
-    public int getDoors() {
-        return doors;
+    public int getSpeed() {
+        return speed;
     }
 
     public int getGears() {
