@@ -1,13 +1,19 @@
 package com.driver;
+
 public class Car extends Vehicle {
 
-    // Constructor
-    public Car(String name, int capacity) {
-        super(name, capacity);
+    // Constructor to initialize the car with name and initial moving state
+    public Car(String name, boolean isMoving) {
+        super(name, isMoving);
     }
 
-    // Car-specific method (optional)
-    public void displayCarInfo() {
-        System.out.println("Car: " + name + ", Capacity: " + capacity);
+    // Method for moving the car
+    public void move(int speed, int direction) {
+        if (speed > 0) {
+            isMoving = true;
+            System.out.println(name + " is moving at " + speed + " km/h in direction " + direction + " degrees.");
+        } else {
+            stop();
+        }
     }
 }
