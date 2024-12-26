@@ -47,4 +47,7 @@ public class Vehicle {
     }
 
     // Method to check if the vehicle is moving
-    public boolean isMov
+    public boolean isMoving() {
+        return isMoving;
+    }
+}
