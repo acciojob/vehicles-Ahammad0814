@@ -1,30 +1,33 @@
 package com.driver;
-// Vehicle.java
+package com.driver;
+
 public class Vehicle {
     protected String name;
-    protected int capacity;
+    protected boolean isMoving;
 
-    // Constructor to initialize name and capacity
-    public Vehicle(String name, int capacity) {
+    // Constructor to initialize the vehicle name and moving state
+    public Vehicle(String name, boolean isMoving) {
         this.name = name;
-        this.capacity = capacity;
+        this.isMoving = isMoving;
     }
 
-    // Getter for vehicle name
-    public String getVehicleName() {
-        return name;
+    // Method to check if the vehicle is moving
+    public boolean isMoving() {
+        return isMoving;
     }
 
-    // Getter for vehicle capacity
-    public int getVehicleCapacity() {
-        return capacity;
+    // Method to stop the vehicle
+    public void stop() {
+        isMoving = false;
+        System.out.println(name + " has stopped.");
     }
 
-    // Method to display basic vehicle info
-    public void displayInfo() {
-        System.out.println("Vehicle Name: " + name);
-        System.out.println("Vehicle Capacity: " + capacity);
+    // Method to display the vehicle's current status
+    public void displayStatus() {
+        if (isMoving) {
+            System.out.println(name + " is moving.");
+        } else {
+            System.out.println(name + " is not moving.");
+        }
     }
 }
-
-
