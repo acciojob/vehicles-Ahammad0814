@@ -1,8 +1,8 @@
 package com.driver;
 
 public class F1 extends Car {
-    public F1(String name, int doors, int gears, int wheels, boolean isManual, int seats) {
-        super(name, doors, gears, wheels, isManual, seats);
+    public F1(String name, int speed, int gears, int wheels, boolean isManual, int seats) {
+        super(name, speed, gears, wheels, isManual, seats);
     }
 
     // Overriding the move method for F1-specific movement
