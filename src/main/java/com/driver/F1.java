@@ -1,7 +1,5 @@
 package com.driver;
 
-package com.driver;
-
 public class F1 extends Car {
 
     // Constructor to initialize the F1 car
