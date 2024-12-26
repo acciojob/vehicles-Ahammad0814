@@ -1,53 +1,43 @@
 package com.driver;
 
 public class Vehicle {
-    protected String name;
-    protected boolean isMoving;
-    protected int currentSpeed;
-    protected int currentDirection;
 
-    // Constructor with name and moving state
+    private String name;
+    private int currentSpeed;
+    private int currentDirection;
+
     public Vehicle(String name) {
         this.name = name;
-        this.isMoving = false;  // Vehicles are initially not moving
         this.currentSpeed = 0;
         this.currentDirection = 0;
     }
 
-    // Getter methods for name, speed, and direction
-    public String getName() {
-        return name;
+    public void steer(int direction){
+        //direction is in degrees, add it to the current direction
+        this.currentDirection += direction;
+        System.out.println("steer method called - The direction is changed to: " + currentDirection + " degrees");
+    }
+
+    public void move(int speed, int direction){
+        //set the values of currentSpeed and currentDirection
+        this.currentSpeed = speed;
+        this.currentDirection = direction;
+        System.out.println("move method called - The speed is changed to: " + currentSpeed + ", and the direction is changed to: " + currentDirection + " degrees");
+    }
+
+    public void stop(){
+        this.currentSpeed = 0;
+        System.out.println("stop method called - The vehicle is stopped");
     }
 
     public int getCurrentSpeed() {
         return currentSpeed;
     }
-
-    public int getCurrentDirection() {
+    public int getCurrentDirection(){
         return currentDirection;
     }
-
-    // Method to stop the vehicle
-    public void stop() {
-        isMoving = false;
-        currentSpeed = 0;
-        System.out.println(name + " has stopped.");
+    public String getName(){
+        return name;
     }
 
-    // Method to move the vehicle
-    public void move(int speed, int direction) {
-        if (speed > 0) {
-            isMoving = true;
-            currentSpeed = speed;
-            currentDirection = direction;
-            System.out.println(name + " is moving at " + speed + " km/h in direction " + direction + " degrees.");
-        } else {
-            stop();
-        }
-    }
-
-    // Method to check if the vehicle is moving
-    public boolean isMoving() {
-        return isMoving;
-    }
 }
