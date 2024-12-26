@@ -1,10 +1,10 @@
 package com.driver;
-
+// Vehicle.java
 public class Vehicle {
     protected String name;
     protected int capacity;
 
-    // Constructor
+    // Constructor to initialize name and capacity
     public Vehicle(String name, int capacity) {
         this.name = name;
         this.capacity = capacity;
@@ -20,10 +20,11 @@ public class Vehicle {
         return capacity;
     }
 
-    // A generic method to display vehicle info
+    // Method to display basic vehicle info
     public void displayInfo() {
         System.out.println("Vehicle Name: " + name);
         System.out.println("Vehicle Capacity: " + capacity);
     }
 }
+
 
